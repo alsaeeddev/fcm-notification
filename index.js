@@ -105,6 +105,10 @@ app.post("/send-notification", authenticate, async (req, res) => {
 
     console.log("✅ Notification sent:", response);
 
+    await db.collection("notifications").doc(noteId).delete();
+
+    console.log("🗑️ Notification document deleted:", noteId);
+
     return res.json({
       success: true,
       fcmResponse: response,
