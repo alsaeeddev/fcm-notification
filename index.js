@@ -2,7 +2,7 @@ const express = require("express");
 const admin = require("firebase-admin");
 const rateLimit = require("express-rate-limit");
 const morgan = require("morgan");
-import cors from "cors";
+const cors = require("cors");
 
 const app = express();
 
