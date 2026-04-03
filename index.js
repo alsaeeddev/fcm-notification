@@ -92,10 +92,14 @@ app.post("/send-notification", authenticate, async (req, res) => {
         body: data.body,
       },
       data: {
-        route: data.route || "",
+        route: `/${data.route}/${data.orderId}` || "",
         orderId: data.orderId || "",
       },
     };
+	
+	
+
+	
 
     const response = await admin.messaging().send(message);
 
